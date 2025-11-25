@@ -19,3 +19,4 @@ Document to capture follow-up ideas, technical debt, and next-phase investments.
 15. **Signed URLs & retention** – Generate temporary signed URLs for downloaded images to avoid exposing buckets, and define lifecycle/retention rules on `generated` objects to control storage costs and compliance.
 16. **Add database support** – Introduce lightweight persistence (DynamoDB/Postgres) for job metadata, analytics, or request throttling instead of relying solely on in-memory Lambda state.
 17. **Quota enforcement** – Track Gemini consumption in a durable store, cap calls per minute/hour/day, and fail fast when the configured budget is exhausted; optionally emit metrics/alerts when the remaining quota drops below a threshold to prevent surprise billing.
+18. **Input Validation** – Add Input validation & other security measures.
