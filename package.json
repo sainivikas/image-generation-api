@@ -1,0 +1,30 @@
+{
+  "name": "image-generation-api",
+  "version": "1.0.0",
+  "description": "OpenAI-powered serverless image generation endpoint",
+  "main": "dist/lambda/handler.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist lambda-package lambda.zip",
+    "package:lambda": "rm -rf lambda-package lambda.zip && mkdir -p lambda-package && cp -r dist package.json package-lock.json node_modules lambda-package/ && (cd lambda-package && zip -r ../lambda.zip .) && rm -rf lambda-package",
+    "start:local": "node dist/local-server.js",
+    "local-test": "bash scripts/local-test.sh"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.540.0",
+    "axios": "^1.6.8",
+    "express": "^4.19.2",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.130",
+    "@types/express": "^4.17.20",
+    "@types/node": "^20.11.29",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+

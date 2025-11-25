@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+#package-lock.json
+
+# Build outputs
+dist/
+*.zip
+lambda.zip
+worker.zip
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+terraform.tfvars
+*.tfvars.backup
+
+# AWS
+.aws-sam/
+
+# Misc
+*.pem
+*.key
+
