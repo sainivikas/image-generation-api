@@ -80,20 +80,6 @@ npm run local-test
 
 Ensure `GEMINI_API_KEY`, `API_KEY`, and `IMAGES_BUCKET` are set before invoking the script.
 
-### Gemini client smoke test (Python)
-
-```bash
-python gemini_test.py
-```
-
-This helper uses the official `google.ai.generativelanguage_v1beta` client plus `requests` to:
-
-1. List a few available Gemini models.
-2. Generate a text-only image.
-3. Generate another image that blends a reference photo.
-
-Install the dependencies first with `python3 -m pip install google-generativeai requests` and make sure `GEMINI_API_KEY` (and, if necessary, `GEMINI_MODEL`) are exported.
-
 ## Deployment
 
 ```bash
@@ -172,9 +158,3 @@ curl -X POST "$(terraform output -raw api_endpoint)" \
 ```
 
 `setup.sh` prints the exact `curl` command once deployment succeeds.
-
-## Next steps
-
-- Record the generated API URL and share the GitHub repo.
-- Use `scripts/local-test.sh` for smoke-testing before deploying.
-- Optionally add monitoring (CloudWatch dashboards) or CloudFront for CDN caching.

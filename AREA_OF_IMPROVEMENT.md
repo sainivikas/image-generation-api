@@ -1,6 +1,6 @@
 # Area of Improvement
 
-Use this document to capture follow-up ideas, technical debt, and next-phase investments. The list below includes the requested topics plus a few additional opportunities that surfaced while working on the project.
+Document to capture follow-up ideas, technical debt, and next-phase investments.
 
 1. **Authenticate gateway** – Move from the single shared `x-api-key` to API Gateway usage plans with API keys or integrate Amazon Cognito to handle per-user authentication, token rotation, and scoped access.
 2. **Rate limiting** – Track requests per API key, per IP, and/or overall rate limits (p95) to avoid quota overages; enforce the limits at the gateway, Lambda middleware, or via a Redis-backed token bucket.
@@ -18,6 +18,4 @@ Use this document to capture follow-up ideas, technical debt, and next-phase inv
 14. **Reference image management** – Validate/resize reference images before sending them to Gemini to avoid API failures and reduce payload size.
 15. **Signed URLs & retention** – Generate temporary signed URLs for downloaded images to avoid exposing buckets, and define lifecycle/retention rules on `generated` objects to control storage costs and compliance.
 16. **Add database support** – Introduce lightweight persistence (DynamoDB/Postgres) for job metadata, analytics, or request throttling instead of relying solely on in-memory Lambda state.
-
-Feel free to keep adding TODO items to this file as priorities shift.
-
+17. **Quota enforcement** – Track Gemini consumption in a durable store, cap calls per minute/hour/day, and fail fast when the configured budget is exhausted; optionally emit metrics/alerts when the remaining quota drops below a threshold to prevent surprise billing.
